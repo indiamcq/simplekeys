@@ -121,3 +121,6 @@ My scripts have other documnentation there like this.
 
 Documentation is recommended but is not required.
 
+## Scripts supplied
+
+Most of the AHK scripts supplied are fairly minimal, and are used as examples. The XSLT one I use all te time.
