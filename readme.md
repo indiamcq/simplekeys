@@ -4,13 +4,13 @@ An implementation of multiple keyboards using AutoHotKeys.
 
 ## Setup overview
 
-Download the SimpleKeys master.zip
-Unzip in a place tat suits you. I put my scripts in a AHK folder on my desktop.
-Open menusetup.ahk and edit to add your AHK menu names and scripts.
-Open each of your scripts and add the two essential lines at the top.
-Make sure you have a matching .ico for for each script.
-Add a shortcut to No_Keyboard.ahk and add to the Windows Startup folder.
-Start the No_Keyboard.ahk 
+* Download the SimpleKeys master.zip
+* Unzip in a place tat suits you. I put my scripts in a AHK folder on my desktop.
+* Open menusetup.ahk and edit to add your AHK menu names and scripts.
+* Open each of your scripts and add the two essential lines at the top.
+* Make sure you have a matching .ico for for each script.
+* Add a shortcut to No_Keyboard.ahk and add to the Windows Startup folder.
+* Start the No_Keyboard.ahk 
 
 ## Required files
 
