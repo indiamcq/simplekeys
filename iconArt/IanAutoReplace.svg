@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="64px"
+   height="64px"
+   id="svg2985"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   inkscape:export-filename="D:\All-SIL-Publishing\github\SimpleKeys\IanAutoREplace.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"
+   sodipodi:docname="New document 2">
+  <defs
+     id="defs2987" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="5.5"
+     inkscape:cx="32"
+     inkscape:cy="32"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:document-units="px"
+     inkscape:grid-bbox="true"
+     inkscape:window-width="708"
+     inkscape:window-height="633"
+     inkscape:window-x="653"
+     inkscape:window-y="134"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata2990">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer">
+    <rect
+       style="fill:#ff1310;fill-opacity:0.89019608;stroke:#fe0000;stroke-width:5.30267429;stroke-miterlimit:4;stroke-opacity:0.96560848;stroke-dasharray:none"
+       id="rect2993"
+       width="58.788235"
+       height="58.606419"
+       x="2.8786099"
+       y="2.8786099" />
+    <text
+       xml:space="preserve"
+       style="font-size:77.00423431000000100px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#fffffa;fill-opacity:1;stroke:none;font-family:Sans"
+       x="15.225395"
+       y="61.020184"
+       id="text2995"
+       sodipodi:linespacing="125%"
+       transform="scale(1.1187033,0.89389203)"
+       inkscape:export-filename="D:\All-SIL-Publishing\github\SimpleKeys\IanAutoREplace.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan2997"
+         x="15.225395"
+         y="61.020184"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Iskoola Pota;-inkscape-font-specification:Iskoola Pota;fill:#fffffa;fill-opacity:1">I</tspan></text>
+  </g>
+</svg>
