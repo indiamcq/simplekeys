@@ -1,6 +1,6 @@
 # SimpleKeys
 
-This is a implementation of multiple keyboards using AutoHotKeys.
+An implementation of multiple keyboards using AutoHotKeys.
 
 ## Setup overview
 
@@ -82,6 +82,10 @@ nokeyboardscript := "No_Keyboard.ahk"
 You must have a matching Icon for each script named
 * unicode.ahk
 * unicode.ico
+
+You can have up to 30 scripts in your menu. If that is not enough it can be expanded in the simplekeys.ahk file. 
+
+The `max_keyboards` variable is only there to limit the search for other menus.
 
 Sample Scalable Vector Graphics (SVG)) files created in Inkscape are in the iconArt folder.
 
