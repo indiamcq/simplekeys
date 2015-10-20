@@ -31,11 +31,11 @@
     #############################################################
     # Name:         .xslt
     # Purpose:
-    # Part of:      Vimod Pub - http://projects.palaso.org/projects/vimod-pub
-    # Author:       Ian McQuay <ian_mcquay@sil.org>
-    # Created:      2015- -
-    # Copyright:    (c) 2015 SIL International
-    # Licence:      <LGPL>
+    # Part of:      
+    # Author:       
+    # Created:      
+    # Copyright:    
+    # Licence:      <MIT>
     ################################################################ -->
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
  <xsl:template match="/">
@@ -163,15 +163,16 @@
 :O:/xhead::
 (
     <!--
+<?xml version="1.0" encoding="utf-8"?> <!--
     #############################################################
     # Name:         .xslt
     # Purpose:
-    # Part of:      Vimod Pub - http://projects.palaso.org/projects/vimod-pub
-    # Author:       Ian McQuay <ian_mcquay@sil.org>
-    # Created:      2015- -
-    # Copyright:    (c) 2015 SIL International
-    # Licence:      <LGPL>
-    ################################################################ -->
+    # Part of:      
+    # Author:       
+    # Created:      
+    # Copyright:    
+    # Licence:      <MIT>
+    ################################################################ -->-->
 )
 ;:O://::'{enter}{right}{del}{end}
 :O:/amain::
