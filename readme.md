@@ -115,7 +115,6 @@ The rotas are not too hard to define.
 
 ```
 :Z?*:]\::\
-
 :?*:\::
 	; rota for many groups
     ; note sub-groups within each set must start and end with the same unaccented letter
@@ -123,8 +122,19 @@ The rotas are not too hard to define.
 return
 ```
 
-The above uses the \ as the trigger key. In order to write that character we need to define keyboard shorcut so we can write it if needed. `:Z?*:]\::\`  the first line from above.
+The above uses the \ as the trigger key. In order to write that character we need to define keyboard shorcut so we can write it if needed. `:Z?*:]\::\`  the first line from above. Note the trigger key could be changed to = if you use that less than backslash. In that case the first two lines would change to:
+
+```
+:Z?*:]=::=
+:?*:=::
+```
 
 The you need to define your rota sub-groups. A sub-group starts and ends with the same letter. Between those two letters place each character variant starting with the most commonly used. You can have as many sub-groups added to gether inside of one pair of double quotes. I have chosen to put all my lower case vowels together with ā first as that is my highest use then à next as that is my next use variant. Then I have all my Uppercase vowels. Then my n lowercase variants followed by my N variants. I have 6 more spare places I could define other sets. In theory they could all go together but this seems more managable.
 
 Again your files like unicode.ahk and simplekeys.ahk must be UTF-8 and have a BOM.
+
+## Why another keyboard? 
+
+I use Simplekeys mainly for creating XSLT scripts with 'hot strings'. But at times I need to type type special characters. Rotas means I only need to remember one key to press. It is not as fast as defined keys but it is great for casual users.
+
+If you want to type just two or more characters to get a special characters use this form: `:c?*:^e::ê` or `:c?*:^e::{U+00EA}`. Multiple character after tha last colon are supported.
