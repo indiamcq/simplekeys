@@ -4,7 +4,7 @@ An implementation of modular multiple keyboards using AutoHotKeys.
 
 ## Setup overview
 
-* Download and install a Unicode version of Autohotkey from (https://autohotkey.com/download/)[https://autohotkey.com/download/]
+* Download and install a Unicode version of Autohotkey from [https://autohotkey.com/download/](https://autohotkey.com/download/)
 * Download the SimpleKeys master.zip
 * Unzip in a place tat suits you. I put my scripts in a AHK folder on my desktop.
 * Open menuslist.txt and edit to add your AHK menu names and scripts.
@@ -94,6 +94,20 @@ My scripts have other documnentation there like this.
 ````
 
 Documentation is recommended but is not required.
+
+## Simplekeys places an icon in your system tray
+
+If it is not visible, open up the tray overflow and drag the icon into the system tray. Then it should stay visible.
+
+![Icon in tray](resources/nokeysiconintray.GIF)
+
+Left clicking the icon produces this menu.
+
+![Left click menu](resources/leftclickmenu.GIF)
+
+Right clicking the icon produces this menu.
+
+![Right click menu](resources/rightclickmenu.GIF)
 
 ## Scripts supplied
 
