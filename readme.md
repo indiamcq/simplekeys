@@ -103,11 +103,11 @@ If it is not visible, open up the tray overflow and drag the icon into the syste
 
 Left clicking the icon produces this menu.
 
-![Left click menu](resources/leftclickmenu.GIF)
+![Left click menu](resources/leftclickmenu.gif)
 
 Right clicking the icon produces this menu.
 
-![Right click menu](resources/rightclickmenu.GIF)
+![Right click menu](resources/rightclickmenu.gif)
 
 ## Scripts supplied
 
