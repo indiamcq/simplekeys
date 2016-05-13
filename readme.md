@@ -97,11 +97,11 @@ Documentation is recommended but is not required.
 
 ## Simplekeys places an icon in your system tray
 
-If it is not visible, open up the tray overflow and drag the icon into the system tray. Then it should stay visible.
+If it is not visible, open up the tray overflow and drag the icon into the system tray. Then it should stay visible. The following is how mine looks.
 
 ![Icon in tray](resources/nokeysiconintray.GIF)
 
-Left clicking the icon produces this menu.
+Left clicking the icon produces this menu. Of course if you remove or add items then yours will look different.
 
 ![Left click menu](resources/leftclickmenu.gif)
 
