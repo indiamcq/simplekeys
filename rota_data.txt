@@ -1,0 +1,11 @@
+﻿aāàáâãäåaeēèéêëeiīìíîïioōòóôõöouūùúûüu
+AĀÀÁÂÃÄÅAEĒÈÉÊËEIĪÌÍÎÏIOŌÒÓÔÕÖOUŪÙÚÛÜU
+nñŋn
+NÑŊN
+
+
+
+
+
+
+For some reason this is not loading from the loop

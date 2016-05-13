@@ -16,11 +16,15 @@
 ;
 ; >>>>>>>>>>>>>>>>>>>>>>>>>>> Edit what ever afer this line <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 :O:/temp::<xsl:template match="">{Enter 2}</xsl:template>{home}{up 2}{end}{Left 2}
+:O:/tempm::<xsl:template match="" mode="">{Enter 2}</xsl:template>{home}{up 2}{end}{Left 11}
 :O:/tempn::<xsl:template name="">{Enter 2}</xsl:template>{home}{up 2}{end}{Left 2}
-
+:O:/mo:: mode=""{left}
 :O:/callt::<xsl:call-template name="">{enter 2}</xsl:call-template>{home}{up 2}{end}{Left 2}
 :O:/withp::<xsl:with-param name="" select=""/>{left 13}
 :O:/applyt::<xsl:apply-templates select=""/>{left 3}
+:O:/applytm::<xsl:apply-templates select="" mode=""/>{left 11}
+:O:/applytl::<xsl:apply-templates select="">{enter 2}</xsl:apply-templates>{up 2}{end}{left 3}
+:O:/applytlm::<xsl:apply-templates select="" mode="">{enter }<xsl:with-param name="" select=""/>{enter}</xsl:apply-templates>{up 2}{end}{left 11}
 :O:/func::<xsl:function name="">{enter 2}</xsl:function>{home}{up 2}{end}{Left 2}
 :O:/strips::<xsl:strip-space elements=""/>{Left 3}
 :O:/tok::tokenize(,' '){left 5}
@@ -29,13 +33,13 @@
 (
 <?xml version="1.0" encoding="utf-8"?> <!--
     #############################################################
-    # Name:         .xslt
-    # Purpose:
-    # Part of:      
-    # Author:       
-    # Created:      
-    # Copyright:    
-    # Licence:      <MIT>
+    # Name:     .xslt
+    # Purpose:      
+    # Part of:      Vimod Pub - http://projects.palaso.org/projects/vimod-pub
+    # Author:       Ian McQuay <ian_mcquay@sil.org>
+    # Created:      2016- -
+    # Copyright:    (c) 2015 SIL International
+    # Licence:      <LGPL>
     ################################################################ -->
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
  <xsl:template match="/">
@@ -54,17 +58,21 @@
 
 ; comments ==========================================================
 :O:/comm::<{!}--  -->{left 4}
-:O:/cio::<{!}--  -->{left 4}
-:O:/ci::<{!}--
-:O:/co:: -->
-:c?*:cl/::{home}^{right}<{!}-- {end} -->{home}{down}          ;comment out line
+:c?*:cio/::<{!}--  -->{left 4}
+:c?*:ci/::<{!}--
+:c?*:co/:: -->
+:c?*:cl/::{home} {home}^{right}<{!}-- {end} -->{home}{down}          ;comment out line
 :c?*:ul/::{home}^{right}{del 4}{end}{BackSpace 3}{down}{end} ;comment out line
 :O:/col::{home}{shift down}{down}{shift up}{ctrl down}x{ctrl up}<{!}--  -->{left 4}{ctrl down}v{ctrl up}
 
 ; content ===================================================================
 :O:/e::<xsl:element name="">{enter 2}</xsl:element>{home}{up 2}{end}{Left 2}
 :O:/att::<xsl:attribute name="">{enter 2}</xsl:attribute>{home}{up 2}{end}{Left 2}
+:O:/a::<xsl:attribute name="">{enter 2}</xsl:attribute>{home}{up 2}{end}{Left 2}
+:O:/av::<xsl:attribute name="">{enter 1}<xsl:value-of select=""/>{enter 1}</xsl:attribute>{home}{up 2}{end}{Left 2}
+:O:/at::<xsl:attribute name="">{enter 1}<xsl:text></xsl:text>{enter 1}</xsl:attribute>{home}{up 2}{end}{Left 2}
 :O:/val::<xsl:value-of select=""/>{left 3}
+:O:/v::<xsl:value-of select=""/>{left 3}
 :O:/seq::<xsl:sequence select=""/>{left 3}
 :O:/com::<xsl:comment select=""/>{left 3}
 :O:/text::<xsl:text></xsl:text>{left 11}
@@ -114,6 +122,7 @@
 
 :O:/swapd::{home}{shift down}{down}{shift up}{ctrl down}x{ctrl up}{down}{ctrl down}v{ctrl up} ;move line down
 :O:/outx::<xsl:output method="xml" version="1.0" encoding="utf-8" omit-xml-declaration="no" indent="yes" /> ;output xml
+:O:/outh5::<xsl:output method="html" version="5.0" encoding="utf-8" omit-xml-declaration="yes" indent="yes" /> ;output html5
 :O:/outt::<xsl:output method="text" encoding="utf-8" /> ; outpur text
 
 :O:/xl::{home}{shift down}{down}{shift up}{ctrl down}x{ctrl up} ; ??
@@ -121,7 +130,7 @@
 :O:/vl::{ctrl down}v{ctrl up} ; paste
 
 ; output document ======================================================================
-:O:/resultd::<xsl:result-document href="" format="">{enter 2}</xsl:result-document>{left 36}
+:O:/resultd::<xsl:result-document href="{{}{}}" format="">{enter 2}</xsl:result-document>{left 37}
 
 
 :O:.x::.xslt
@@ -132,10 +141,12 @@
 :O:/inc::<xsl:include href=""/>{Left 3}
 :O:/incca::<xsl:include href="inc-copy-anything.xslt"/>
 :O:/incf::<xsl:include href="inc-file2uri.xslt"/>
+:O:/incl::<xsl:include href="inc-lookup.xslt"/>
 :O:/incp::<xsl:include href="project.xslt"/>
 :O:/charm::<xsl:character-map name="">{Enter 2}</xsl:character-map>{home}{up 2}{right 25}
 :O:/outputc::<xsl:output-character character="" string=""/>{left 13}
-:O:/nsf:: xmlns:f="myfunctions"
+:O:/nsf:: xmlns:f="myfunctions" exclude-result-prefixes="f"
+:O:/excrp:: exclude-result-prefixes="f"
 :O:/nsxs:: xmlns:xs="http://www.w3.org/2001/XMLSchema"
 :O:/file2uri::f:file2uri(){Left}
 :O:/nb::&nbsp;
@@ -163,16 +174,15 @@
 :O:/xhead::
 (
     <!--
-<?xml version="1.0" encoding="utf-8"?> <!--
     #############################################################
     # Name:         .xslt
     # Purpose:
-    # Part of:      
-    # Author:       
-    # Created:      
-    # Copyright:    
-    # Licence:      <MIT>
-    ################################################################ -->-->
+    # Part of:      Vimod Pub - http://projects.palaso.org/projects/vimod-pub
+    # Author:       Ian McQuay <ian_mcquay@sil.org>
+    # Created:      2015- -
+    # Copyright:    (c) 2015 SIL International
+    # Licence:      <LGPL>
+    ################################################################ -->
 )
 ;:O://::'{enter}{right}{del}{end}
 :O:/amain::
@@ -225,3 +235,132 @@ public class MainActivity extends Activity {
 :O:/strl::string-length(){left 1}
 :O:tr/::<tr><td>{end}</td></tr>{home}{down}
 :O:tdi/::</td><td>
+
+:O:demo1xslt/::
+(
+<xsl:stylesheet 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
+    exclude-result-prefixes="xs">
+<xsl:output method="xml" version="1.0" encoding="utf-8" omit-xml-declaration="no" indent="yes" />
+<xsl:template match="@*|node()">
+    <xsl:copy>
+        <xsl:apply-templates select="@*|node()"/>
+    </xsl:copy>
+</xsl:template>
+    
+</xsl:stylesheet>
+)
+
+:O:demo2xslt/::
+(
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:output method="html" version="5.0" encoding="utf-8" omit-xml-declaration="no" indent="yes" />
+<xsl:strip-space elements="*"/>
+      <xsl:template match="/*">
+            <!-- I prefer the generic * for the root element instead of<xsl:template match="/movies">, then you are never wrong.  -->
+            <html>
+                  <head>
+                        <title>Movies</title>
+                  </head>
+                  <body>
+                        <!-- I am not a XSLT pro, but believe this is the preferred way of getting child elements, it is much more modular and easy to expand. -->
+                        <xsl:apply-templates/>
+                        <!-- or <xsl:apply-templates /> -->
+                  </body>
+            </html>
+      </xsl:template>
+      <xsl:template match="movie">
+            <div>Name: <xsl:value-of select="@name" /></div>
+            <!-- xsl:if test="price>10" -->
+            <!-- xsl:choose xsl:when xsl:otherwise -->
+      </xsl:template>
+</xsl:stylesheet>
+)
+:O:demo2data/::
+(
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="movies.xsl"?>
+<movies>
+	<movie name="Pirates of the Caribbean" />
+	<movie name="Lord of the Rings" />
+</movies>
+)
+:O:demo3xslt/::
+(
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:output method="html" version="5.0" encoding="utf-8" omit-xml-declaration="no" indent="yes" />
+<xsl:strip-space elements="*"/>
+      <xsl:template match="/*">
+            <!-- I prefer the generic * for the root element instead of<xsl:template match="/movies">, then you are never wrong.  -->
+            <html>
+                  <head>
+                        <title>Movies</title>
+                        <style>
+                        .movie:before {content:'Name: ';color:blue}
+                        body:before {content: 'Movies'; font-size:20pt; font-weight:bold}
+                        </style>
+                  </head>
+                  <body>
+                        <!-- I am not a XSLT pro, but believe this is the preferred way of getting child elements, it is much more modular and easy to expand. -->
+                        <xsl:apply-templates/>
+                        <!-- or <xsl:apply-templates /> -->
+                  </body>
+            </html>
+      </xsl:template>
+      <xsl:template match="*">
+            <div class="{local-name()}"><xsl:value-of select="@name" /></div>
+      </xsl:template>
+</xsl:stylesheet>
+)
+:O:demo4xslt/::
+(
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:output method="html" version="5.0" encoding="utf-8" omit-xml-declaration="no" indent="yes" />
+<xsl:strip-space elements="*"/>
+<xsl:param name="div-elements" select="'movie film'"/>
+<xsl:param name="wanted-attrib" select="'name'"/>
+<xsl:variable name="div" select="tokenize($div-elements,' ')"/>
+<xsl:variable name="attrib" select="tokenize($wanted-attrib,' ')"/>
+      <xsl:template match="/*">
+            <!-- I prefer the generic * for the root element instead of<xsl:template match="/movies">, then you are never wrong.  -->
+            <html>
+                  <head>
+                        <title><xsl:value-of select="concat(upper-case(substring(name(), 1, 1)), lower-case(substring(name(), 2)))"/></title>
+                        <style>
+                        .name:before {content:'Name: ';color:blue}
+                        body:before {content: 'Movies'; font-size:20pt; font-weight:bold}
+                        </style>
+                  </head>
+                  <body>
+                        <!-- I am not a XSLT pro, but believe this is the preferred way of getting child elements, it is much more modular and easy to expand. -->
+                        <xsl:apply-templates/>
+                        <!-- or <xsl:apply-templates /> -->
+                  </body>
+            </html>
+      </xsl:template>
+      <xsl:template match="*[local-name() = $div]"><!-- this will match any element named movie or film -->
+            <div class="{local-name()}"><xsl:apply-templates select="node()|@*"/> </div>
+      </xsl:template>
+      <xsl:template match="*"><!-- this will match all other elements -->
+            <span class="{local-name()}"><xsl:apply-templates/> </span>
+      </xsl:template>
+       <xsl:template match="@*[local-name() = $attrib]"><!-- this will match any attribute -->
+            <span class="{local-name()}"><xsl:value-of select="."/> </span>
+      </xsl:template>     
+</xsl:stylesheet>
+)
+:O:de/::<d_Eng></d_Eng>
+:O:db/::<d_Ban></d_Ban>
+:O:cf/::<cf></cf>
+:c?*:li/::{home} {home}^{right}<li>{end}</li>{home}{down}
+:c?*:>/::+^{left}^x<^v{end}>< {BackSpace}/^v>^{left 2}{left 2}
+:c?*:/>/::+^{left}^x<^v{end}/ {BackSpace}>
+:c?*:/lb/::+{home}^x<a href="http://languages.info/dl_statistics_counter.php?DL_URL=\Shared\^v" ></a>{left 4}
+:O:/sort::<xsl:sort select=""/>{left 3}
+:O:%pp::%projectpath%
+:c?*:++::+{home}^x<xsl:element name="td"><xsl:value-of select="count(*[name() = $style[^v]])"/></xsl:element>
+

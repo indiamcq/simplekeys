@@ -1,4 +1,4 @@
-; SimpleKeys
+﻿; SimpleKeys
 ; 
 ; Written by: Ian McQuay
 ; 2007-Dec-16
@@ -22,19 +22,22 @@
 ; there must be a return to end a new key combination.
 ;
 ; get the menu variables
-#include menusetup.ahk
+;#include menusetup.ahk
 
 startscript := A_ScriptName             ; Define the name of the file for the tool tip and tray message
-
+prevkeypickupspeed := 50
 
 ; remove the file extension from the script name.
 StringTrimRight, OutputVar, startScript, 4
 iconfile := OutputVar . ".ico"
 menu, tray, Icon, %iconfile%
+nokeyboardmenu := "No Keyboard"
+nokeyboardscript := "No_Keyboard.ahk"
 
 ;
 gosub, menusetup
 gosub, tooltipsub
+
 
 
 ; set the key delay
@@ -49,8 +52,8 @@ $pause::                               		; Suspend current script except for pau
 	}
 	else 
 	{
-	Suspend
-	gosub, suspendTip
+		Suspend
+		gosub, suspendTip
 	}
 return
 
@@ -62,17 +65,26 @@ ExitApp
 ; menu setup must match gosubs defined later <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 menusetup:
 	; Left click menu items
-
-	Loop, %max_keboards% ; menu loop to create each numbered menu item
+	
+	Loop, Read, menulist.txt ; menu loop to create each numbered menu item
 	{
-		script := script%A_index%
-		scriptmenu := script%A_index%menu
-		StringSplit, filename, script, .	
-		
-		IfExist, %script%
+		line := A_LoopReadLine
+		; MsgBox %line%
+		cell1 := RegExReplace(line,"^(.+);.+","$1")
+		;MsgBox %cell1%
+		cell2 := RegExReplace(A_LoopReadLine,".+;(.+)$","$1")
+		script := A_ScriptDir "\" cell1 ".ahk"
+		script%A_index% := script	
+		scriptmenu := cell2
+		script%A_index%menu := cell2
+		filename := cell1
+		iconfile := A_ScriptDir "\" cell1 ".ico"
+		IfNotExist, %iconfile%
+			FileCopy, %A_ScriptDir%\Icon_04.ico, %iconfile%
+		If FileExist(script)
 		{
 			Menu, leftclick, add, %scriptmenu%, startscript%A_index%, P1
-			Menu, leftclick, Icon, %scriptmenu%, %filename1%.ico,
+			Menu, leftclick, Icon, %scriptmenu%, %filename%.ico,
 			if (script = A_ScriptName)
 			{
 				menu, leftclick, disable, %scriptmenu%
@@ -81,6 +93,8 @@ menusetup:
 			}
 		}
 	}
+
+
 
 
 	; the following do not need to change
@@ -236,30 +250,26 @@ ExitApp
 ; end of gosub to match menu <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 tooltipsub:
-; Set the positioning for the tooltip. Change the tool tip offset to a larger value if it covers over your minmise button.
-tooltipoffset = 150
-; the tooltipletwidth is an approximation of how wide a letter is in pixels. Its purpose is to keep the tooltips right border the same as the Keys Off tooltip.
-tooltipletwidth = 7
-; Tooltip to indicate the keyboard is active
-CoordMode, ToolTip, Screen
+	; Set the positioning for the tooltip. Change the tool tip offset to a larger value if it covers over your minmise button.
+	tooltipoffset = 150
+	; the tooltipletwidth is an approximation of how wide a letter is in pixels. Its purpose is to keep the tooltips right border the same as the Keys Off tooltip.
+	tooltipletwidth = 7
+	; Tooltip to indicate the keyboard is active
+	CoordMode, ToolTip, Screen
 	IfNotEqual, OutputVar, No_Keyboard
 	{
-ToolTip , %OutputVar% , A_ScreenWidth -tooltipoffset -(StrLen(OutputVar) * tooltipletwidth), 0, 
+		ToolTip , %OutputVar% , A_ScreenWidth -tooltipoffset -(StrLen(OutputVar) * tooltipletwidth), 0, 
 	}
-OnMessage(0x404,"AHK_NotifyTrayIcon") 					; Check for left click on tray icon
-
+	OnMessage(0x404,"AHK_NotifyTrayIcon") 					; Check for left click on tray icon
 return
-
-
 
 ExitHandler:
   ExitApp
 return
 
-
 SuspendHandler: 
-  suspend toggle
-  gosub, suspendTip
+	suspend toggle
+	gosub, suspendTip
 return
 
 suspendTip:
@@ -275,7 +285,14 @@ suspendTip:
 	}
 return
 
-
+setuprota:
+	Loop, Read, %A_ScriptDir%\rota_data.txt ; add rota variables loop to create each numbered menu item not working
+	{
+		Linedata := A_LoopReadLine
+		rotadata%A_Index% := Linedata
+		MsgBox %Linedata%
+	}
+return
 
 ; functions ================================================================================
 
@@ -305,7 +322,108 @@ AHK_NotifyTrayIcon(wParam, lParam) ;handles left click on tray icon
   ShowTrayPopup()
  return
 }
+
 ShowTrayPopup()
 {
   Menu, leftclick, Show  
 }
+
+rota10(rota1,rota2,rota3,rota4,rota5,rota6,rota7,rota8,rota9,rota10)
+{
+	OldClipboard := Clipboard
+	OldClipboard := 
+	SetKeyDelay, 50
+	Send, {Shift down}{Left}{Shift up}^c{Right}
+	ClipWait
+	SetKeyDelay, 0
+	prevchar := Clipboard
+	;MsgBox %prevchar%
+	rp1 := InStr(rota1, prevchar, true)
+	rp2 := InStr(rota2, prevchar, true)
+	rp3 := InStr(rota3, prevchar, true)
+	rp4 := InStr(rota4, prevchar, true)
+	rp5 := InStr(rota5, prevchar, true)
+	rp6 := InStr(rota6, prevchar, true)
+	rp7 := InStr(rota7, prevchar, true)
+	rp8 := InStr(rota8, prevchar, true)
+	rp9 := InStr(rota9, prevchar, true)
+	rp10 := InStr(rota10, prevchar, true)
+
+	if rp1 >= 1 
+	{
+		;outchar := SubStr(rota1, rp1 + 1, 1)
+		StringMid, outchar, rota1, rp1 + 1 , 1
+		; MsgBox %lastchar% %outchar%
+		
+		SendInput, {bs}%outchar%
+	} else if (rp2 >= 1) 
+	{
+		StringMid, outchar, rota2, rp2 + 1 , 1
+		;outchar := SubStr(rota2, rp2 + 1, 1)
+		SendInput, {bs}%outchar%	
+	} else if (rp3 >= 1) 
+	{
+		StringMid, outchar, rota3, rp3 + 1 , 1
+		SendInput, {bs}%outchar%
+	} else if (rp4 >= 1) 
+	{
+		StringMid, outchar, rota4, rp4 + 1 , 1
+		SendInput, {bs}%outchar%
+	} else if (rp5 >= 1) 
+	{
+		StringMid, outchar, rota5, rp5 + 1 , 1
+		SendInput, {bs}%outchar%
+	} else if (rp6 >= 1) 
+	{
+		StringMid, outchar, rota6, rp6 + 1 , 1
+		SendInput, {bs}%outchar%
+	} else if (rp7 >= 1) 
+	{
+		StringMid, outchar, rota7, rp7 + 1 , 1
+		SendInput, {bs}%outchar%
+	} else if (rp8 >= 1) 
+	{
+		StringMid, outchar, rota8, rp8 + 1 , 1
+		SendInput, {bs}%outchar%
+	} else if (rp9 >= 1) 
+	{
+		StringMid, outchar, rota9, rp9 + 1 , 1
+		SendInput, {bs}%outchar%
+	} else if (rp10 >= 1) 
+	{
+		StringMid, outchar, rota10, rp10 + 1 , 1
+		SendInput, {bs}%outchar%
+	} else {
+		
+	}
+}
+
+rota2(rota1,rota2)
+{
+	OldClipboard := Clipboard
+	OldClipboard := 
+	SetKeyDelay, 50
+	Send, {Shift down}{Left}{Shift up}^c{Right}
+	ClipWait
+	SetKeyDelay, 0
+	prevchar := Clipboard
+	;MsgBox %prevchar%
+	rp1 := InStr(rota1, prevchar, true)
+	rp2 := InStr(rota2, prevchar, true)
+	if rp1 >= 1 
+	{
+		;outchar := SubStr(rota1, rp1 + 1, 1)
+		StringMid, outchar, rota1, rp1 + 1 , 1
+		; MsgBox %lastchar% %outchar%
+		
+		SendInput, {bs}%outchar%
+	} else if (rp2 >= 1) 
+	{
+		StringMid, outchar, rota2, rp2 + 1 , 1
+		;outchar := SubStr(rota2, rp2 + 1, 1)
+		SendInput, {bs}%outchar%	
+	} else {
+		; does nothing
+	}
+}
+

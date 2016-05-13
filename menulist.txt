@@ -1,0 +1,11 @@
+My-HTML;HTML shortcuts
+ipa;IPA keyboard
+javascript;Javascript
+notetab;NoteTab
+myPLBkeys;My PLB keyboard
+PLBkeys;PLB traditional keyboard
+paratextregex;regex keyboard
+Transcriber-Timing-Assistant;Transcriber Timing Assistant
+Unicode;Unicode keyboard
+xslt;xslt shortcuts
+IanAutoReplace;Ian's autoreplace

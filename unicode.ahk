@@ -1,4 +1,4 @@
-; Unicode keyboard SimpleKeys script
+﻿; Unicode keyboard SimpleKeys script
 ;
 ; Written by Ian McQuay
 ; 2011-08-16
@@ -13,3 +13,10 @@
 ;
 ; >>>>>>>>>>>>>>>>>>>>>>>>>>> Edit what ever afer this line <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 #include unicode-inc.ahk
+:?*:]=::=
+
+:?*:=::
+	; rota for many groups
+    ; note sub-groups within each set must start and end with the same unaccented letter
+	rota10("aāàáâãäåaeēèéêëeiīìíîïioōòóôõöouūùúûüu","AĀÀÁÂÃÄÅAEĒÈÉÊËEIĪÌÍÎÏIOŌÒÓÔÕÖOUŪÙÚÛÜU","nñŋn","NÑŊN","","","","","","")
+return
