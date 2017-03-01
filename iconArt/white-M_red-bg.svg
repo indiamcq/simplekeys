@@ -14,10 +14,10 @@
    id="svg3767"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   inkscape:export-filename="D:\All-SIL-Publishing\github\SimpleKeys\iconArt\xslt.png"
+   inkscape:export-filename="D:\All-SIL-Publishing\github\simplekeys\trunk\iconArt\Icon_M.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90"
-   sodipodi:docname="PLBkeys.svg">
+   sodipodi:docname="white-M_red-bg.svg">
   <defs
      id="defs3769" />
   <sodipodi:namedview
@@ -28,16 +28,16 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="5.5"
-     inkscape:cx="3.6363636"
-     inkscape:cy="32"
+     inkscape:cx="6.4532872"
+     inkscape:cy="32.505742"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:document-units="px"
      inkscape:grid-bbox="true"
-     inkscape:window-width="1058"
+     inkscape:window-width="1367"
      inkscape:window-height="658"
      inkscape:window-x="52"
-     inkscape:window-y="52"
+     inkscape:window-y="181"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata3772">
@@ -47,7 +47,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -56,35 +56,41 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer">
     <rect
-       style="fill:#0000ff;fill-opacity:1;stroke:none"
+       style="fill:#ff002a;fill-opacity:1;stroke:none"
        id="rect2986"
-       width="64.36364"
-       height="64.727272"
-       x="0"
-       y="-0.18181819" />
+       width="64.181816"
+       height="63.999996"
+       x="-0.18181835"
+       y="8.6697675e-008" />
     <text
        xml:space="preserve"
-       style="font-size:74.73043823px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#4d4d4d;fill-opacity:1;stroke:none;font-family:Sans"
-       x="5.5108528"
-       y="60.007504"
-       id="text3775"
-       sodipodi:linespacing="125%"
-       transform="scale(1.0378656,0.96351588)"><tspan
-         sodipodi:role="line"
-         id="tspan3777"
-         x="5.5108528"
-         y="60.007504">P</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:74.73043823px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
-       x="4.5817003"
-       y="58.826263"
+       style="font-size:73.17554474px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#4d4d4d;fill-opacity:1;stroke:none;font-family:Sans"
+       x="2.4076133"
+       y="58.895718"
        id="text3775-1"
        sodipodi:linespacing="125%"
-       transform="scale(1.0378656,0.96351589)"><tspan
+       transform="scale(1.016271,0.9839895)"
+       inkscape:export-filename="D:\All-SIL-Publishing\github\SimpleKeys\iconArt\xslt.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan3777-6"
-         x="4.5817003"
-         y="58.826263">P</tspan></text>
+         x="2.4076133"
+         y="58.895718">M</tspan></text>
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="D:\All-SIL-Publishing\github\SimpleKeys\iconArt\xslt.png"
+       transform="scale(1.016271,0.9839895)"
+       sodipodi:linespacing="125%"
+       id="text2985"
+       y="57.417507"
+       x="0.97635537"
+       style="font-size:73.17554474px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         y="57.417507"
+         x="0.97635537"
+         id="tspan2987"
+         sodipodi:role="line">M</tspan></text>
   </g>
 </svg>

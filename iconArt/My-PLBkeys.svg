@@ -14,7 +14,7 @@
    id="svg3767"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   inkscape:export-filename="D:\All-SIL-Publishing\github\SimpleKeys\iconArt\My-PLBkeys.png"
+   inkscape:export-filename="D:\All-SIL-Publishing\github\SimpleKeys\trunk\iconArt\My-PLBkeys.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90"
    sodipodi:docname="My-PLBkeys.svg">
@@ -55,6 +55,13 @@
      id="layer1"
      inkscape:label="Layer 1"
      inkscape:groupmode="layer">
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       id="rect2987"
+       width="65.090912"
+       height="65.090912"
+       x="-0.36363637"
+       y="-0.72727275" />
     <path
        style="fill:#00ffff;fill-opacity:1;stroke:none"
        d="M 64,0 0,64 0,0 z"
