@@ -34,12 +34,12 @@
 <?xml version="1.0" encoding="utf-8"?> <!--
     #############################################################
     # Name:     .xslt
-    # Purpose:      
-    # Part of:      Vimod Pub - http://projects.palaso.org/projects/vimod-pub
-    # Author:       Ian McQuay <ian_mcquay@sil.org>
-    # Created:      2016- -
-    # Copyright:    (c) 2015 SIL International
-    # Licence:      <LGPL>
+    # Purpose:		.
+    # Part of:		
+    # Author:       
+    # Created:		2017- -
+    # Copyright:   	(c) 
+    # Licence:		<MIT>
     ################################################################ -->
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
  <xsl:template match="/">
@@ -116,7 +116,8 @@
 :O:ucm::use-character-maps=""{left 1}
 
 ; basic editing
-:O:/d::{home}{shift down}{end}{shift up}{ctrl down}c{ctrl up}{right}{enter}{ctrl down}v{ctrl up} ;duplicat line
+:O:d/::{home}{shift down}{end}{shift up}{ctrl down}c{ctrl up}{right}{enter}{ctrl down}v{ctrl up} ;duplicat line
+:O:u2/::{home}{shift down}{end}{shift up}{ctrl down}x{ctrl up}{home}{up 2}{ctrl down}v{ctrl up} ;move line up 2 lines
 
 :O:/swapup::{home}{shift down}{down}{shift up}{ctrl down}x{ctrl up}{up}{ctrl down}v{ctrl up} ;move line up
 
@@ -175,13 +176,13 @@
 (
     <!--
     #############################################################
-    # Name:         .xslt
-    # Purpose:
-    # Part of:      Vimod Pub - http://projects.palaso.org/projects/vimod-pub
-    # Author:       Ian McQuay <ian_mcquay@sil.org>
-    # Created:      2015- -
-    # Copyright:    (c) 2015 SIL International
-    # Licence:      <LGPL>
+    # Name:     .xslt
+    # Purpose:		.
+    # Part of:		
+    # Author:       
+    # Created:		2017- -
+    # Copyright:   	(c) 
+    # Licence:		<MIT>
     ################################################################ -->
 )
 ;:O://::'{enter}{right}{del}{end}

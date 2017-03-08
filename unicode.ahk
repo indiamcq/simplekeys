@@ -13,10 +13,8 @@
 ;
 ; >>>>>>>>>>>>>>>>>>>>>>>>>>> Edit what ever afer this line <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 #include unicode-inc.ahk
-:?*:]\::\
-
-:?*:\::
-	; rota for many groups
-    ; note sub-groups within each set must start and end with the same unaccented letter
-	rota10("aāàáâãäåaeēèéêëeiīìíîïioōòóôõöouūùúûüu","AĀÀÁÂÃÄÅAEĒÈÉÊËEIĪÌÍÎÏIOŌÒÓÔÕÖOUŪÙÚÛÜU","nñŋn","NÑŊN","","","","","","")
+:c?*:\=::= ; get = after letter any rota letter
+:c?*:=::
+	; Vowel  and consonant rota that can be used for composed characters only
+	rota20("aàáâãäåa","eèéêëe","iìíîïi","oòóôõöo","uùúûüu","AÀÁÂÃÄÅA","EÈÉÊËE","IÌÍÎÏI","OÒÓÔÕÖO","UÙÚÛÜU","nñ?n","NÑ?N","","","","","","","","","=")
 return

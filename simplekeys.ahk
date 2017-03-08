@@ -84,7 +84,7 @@ menusetup:
 		If FileExist(script)
 		{
 			Menu, leftclick, add, %scriptmenu%, startscript%A_index%, P1
-			Menu, leftclick, Icon, %scriptmenu%, %filename%.ico,
+			Menu, leftclick, Icon, %scriptmenu%, %iconfile%,
 			if (script = A_ScriptName)
 			{
 				menu, leftclick, disable, %scriptmenu%
@@ -114,6 +114,16 @@ menusetup:
 		{
 			; if the nokeboardscript is not active show the suspend menu item
 			Menu, leftclick, add, Suspend Hotkeys, SuspendHandler
+			if (nokeyboardscript = A_ScriptName)
+			{
+				Menu, leftclick, add, Hide Tooltip, UnSuspendTooltip
+				Menu, leftclick, Check, Hide Tooltip
+			}
+			else
+			{	
+
+				Menu, leftclick, add, Hide Tooltip, SuspendTooltip
+			}
 		}	
 	}
 	Menu, leftclick, Add, Exit,        ExitHandler     ; Add the exit item
@@ -251,9 +261,9 @@ ExitApp
 
 tooltipsub:
 	; Set the positioning for the tooltip. Change the tool tip offset to a larger value if it covers over your minmise button.
-	tooltipoffset = 150
+	tooltipoffset = 160
 	; the tooltipletwidth is an approximation of how wide a letter is in pixels. Its purpose is to keep the tooltips right border the same as the Keys Off tooltip.
-	tooltipletwidth = 7
+	tooltipletwidth = 6
 	; Tooltip to indicate the keyboard is active
 	CoordMode, ToolTip, Screen
 	IfNotEqual, OutputVar, No_Keyboard
@@ -272,6 +282,19 @@ SuspendHandler:
 	gosub, suspendTip
 return
 
+SuspendTooltip:
+	ToolTip ,
+	Menu, leftclick, Check, Hide Tooltip
+	Menu, leftclick, Add, Hide Tooltip, UnSuspendTooltip 
+return
+
+UnSuspendTooltip:
+	gosub, tooltipsub
+	Menu, leftclick, UnCheck, Hide Tooltip
+	Menu, leftclick, Add, Hide Tooltip, SuspendTooltip 
+return
+
+
 suspendTip:
   if (A_IsSuspended)
 	{
@@ -285,18 +308,11 @@ suspendTip:
 	}
 return
 
-setuprota:
-	Loop, Read, %A_ScriptDir%\rota_data.txt ; add rota variables loop to create each numbered menu item not working
-	{
-		Linedata := A_LoopReadLine
-		rotadata%A_Index% := Linedata
-		MsgBox %Linedata%
-	}
-return
+
 
 ; functions ================================================================================
 
-; depreciate unicodekey() function better to use form, much simplier from
+; depreciate unicodekey() function better to use much simplier form
 ; :c?*:em/::{u+2014}  ; em dash
 
 unicodekey(codea,codeb=0000)     ; unicodekey Unicode function using sendinput
@@ -328,7 +344,7 @@ ShowTrayPopup()
   Menu, leftclick, Show  
 }
 
-rota10(rota1,rota2,rota3,rota4,rota5,rota6,rota7,rota8,rota9,rota10)
+rota20(rota1,rota2,rota3,rota4,rota5,rota6,rota7,rota8,rota9,rota10,rota11,rota12,rota13,rota14,rota15,rota16,rota17,rota18,rota19,rota20,rota21)
 {
 	OldClipboard := Clipboard
 	OldClipboard := 
@@ -348,6 +364,18 @@ rota10(rota1,rota2,rota3,rota4,rota5,rota6,rota7,rota8,rota9,rota10)
 	rp8 := InStr(rota8, prevchar, true)
 	rp9 := InStr(rota9, prevchar, true)
 	rp10 := InStr(rota10, prevchar, true)
+	rp11 := InStr(rota11, prevchar, true)
+	rp12 := InStr(rota12, prevchar, true)
+	rp13 := InStr(rota13, prevchar, true)
+	rp14 := InStr(rota14, prevchar, true)
+	rp15 := InStr(rota15, prevchar, true)
+	rp16 := InStr(rota16, prevchar, true)
+	rp17 := InStr(rota17, prevchar, true)
+	rp18 := InStr(rota18, prevchar, true)
+	rp19 := InStr(rota19, prevchar, true)
+	rp20 := InStr(rota20, prevchar, true)
+	rp21 := rota21
+	
 
 	if rp1 >= 1 
 	{
@@ -393,8 +421,48 @@ rota10(rota1,rota2,rota3,rota4,rota5,rota6,rota7,rota8,rota9,rota10)
 	{
 		StringMid, outchar, rota10, rp10 + 1 , 1
 		SendInput, {bs}%outchar%
+	} else if (rp11 >= 1) 
+	{
+		StringMid, outchar, rota11, rp11 + 1 , 1
+		SendInput, {bs}%outchar%
+	} else if (rp12 >= 1) 
+	{
+		StringMid, outchar, rota12, rp12 + 1 , 1
+		SendInput, {bs}%outchar%	
+	} else if (rp13 >= 1) 
+	{
+		StringMid, outchar, rota13, rp13 + 1 , 1
+		SendInput, {bs}%outchar%
+	} else if (rp14 >= 1) 
+	{
+		StringMid, outchar, rota14, rp14 + 1 , 1
+		SendInput, {bs}%outchar%
+	} else if (rp15 >= 1) 
+	{
+		StringMid, outchar, rota15, rp15 + 1 , 1
+		SendInput, {bs}%outchar%
+	} else if (rp16 >= 1) 
+	{
+		StringMid, outchar, rota16, rp16 + 1 , 1
+		SendInput, {bs}%outchar%
+	} else if (rp17 >= 1) 
+	{
+		StringMid, outchar, rota17, rp17 + 1 , 1
+		SendInput, {bs}%outchar%
+	} else if (rp18 >= 1) 
+	{
+		StringMid, outchar, rota18, rp18 + 1 , 1
+		SendInput, {bs}%outchar%
+	} else if (rp19 >= 1) 
+	{
+		StringMid, outchar, rota19, rp19 + 1 , 1
+		SendInput, {bs}%outchar%
+	} else if (rp20 >= 1) 
+	{
+		StringMid, outchar, rota20, rp20 + 1 , 1
+		SendInput, {bs}%outchar%
 	} else {
-		
+		SendInput, %rota21%
 	}
 }
 

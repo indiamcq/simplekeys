@@ -14,7 +14,7 @@
    id="svg3767"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   inkscape:export-filename="D:\All-SIL-Publishing\github\SimpleKeys\iconArt\xslt.png"
+   inkscape:export-filename="D:\All-SIL-Publishing\github\SimpleKeys\trunk\iconArt\plb.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90"
    sodipodi:docname="PLBkeys.svg">
@@ -47,7 +47,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
