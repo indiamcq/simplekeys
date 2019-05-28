@@ -347,12 +347,17 @@ ShowTrayPopup()
 rota20(rota1,rota2,rota3,rota4,rota5,rota6,rota7,rota8,rota9,rota10,rota11,rota12,rota13,rota14,rota15,rota16,rota17,rota18,rota19,rota20,rota21)
 {
 	OldClipboard := Clipboard
-	OldClipboard := 
-	SetKeyDelay, 50
-	Send, {Shift down}{Left}{Shift up}^c{Right}
+	;OldClipboard := 
+	SetKeyDelay, 5
+	Send, +{Left}^c{Right}
 	ClipWait
 	SetKeyDelay, 0
+	;if (Strlen(clipboard) = 0)
+	;{
+	;	Clipboard :=
+	;}
 	prevchar := Clipboard
+	Clipboard := OldClipboard
 	;MsgBox %prevchar%
 	rp1 := InStr(rota1, prevchar, true)
 	rp2 := InStr(rota2, prevchar, true)
@@ -374,10 +379,10 @@ rota20(rota1,rota2,rota3,rota4,rota5,rota6,rota7,rota8,rota9,rota10,rota11,rota1
 	rp18 := InStr(rota18, prevchar, true)
 	rp19 := InStr(rota19, prevchar, true)
 	rp20 := InStr(rota20, prevchar, true)
-	rp21 := rota21
+
 	
 
-	if rp1 >= 1 
+	if (rp1 >= 1 )
 	{
 		;outchar := SubStr(rota1, rp1 + 1, 1)
 		StringMid, outchar, rota1, rp1 + 1 , 1
